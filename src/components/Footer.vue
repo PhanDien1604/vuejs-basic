@@ -1,13 +1,13 @@
 <template lang="">
-  <div>
-    <h1>Footer</h1>
-  </div>
+  <a-layout-footer style="text-align: center">
+    Ant Design ©2018 Created by Ant UED
+  </a-layout-footer>
 </template>
 <script>
 export default {
     
 }
 </script>
-<style lang="">
+<style>
     
 </style>

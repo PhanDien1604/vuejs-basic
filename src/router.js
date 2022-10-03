@@ -4,10 +4,16 @@ import Home from '@/pages/Home';
 import Login from '@/pages/auth/Login';
 import Register from '@/pages/auth/Register';
 
+import Demo from '@/pages/Demo';
+
 const routes = [
     { 
         path: '/',
         component: Home
+    },
+    { 
+        path: '/demo',
+        component: Demo
     },
     {
         path: '/login',

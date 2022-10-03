@@ -1,26 +1,17 @@
-<template>
-  <div>
-    <Header />
-    <router-view />
-    <Footer />
-  </div>
+<template lang="">
+  <component :is="layout">
+    <router-view v-model:layout="layout" />
+  </component>
 </template>
-
 <script>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
-
 export default {
-  name: 'App',
-  components: {
-    Header,
-    Footer
-  }
+  data() {
+    return {
+      layout: 'div'
+    }
+  },
 }
 </script>
-
-<style>
-#app {
+<style lang="">
   
-}
 </style>
