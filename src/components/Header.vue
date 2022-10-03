@@ -3,12 +3,12 @@
     <menu-unfold-outlined
       v-if="collapsed"
       class="trigger"
-      @click="() => (collapsed = !collapsed)"
+      @click="clickMenu"
     />
     <menu-fold-outlined
       v-else
       class="trigger"
-      @click="() => (collapsed = !collapsed)"
+      @click="clickMenu"
     />
   </a-layout-header>
 </template>
@@ -17,19 +17,25 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
-export default defineComponent({
+
+export default {
   components: {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
   },
-  setup() {
+
+  data() {
     return {
-      selectedKeys: ref(['1']),
-      collapsed: ref(false),
-    };
+      collapsed: false
+    }
   },
-})
+  methods: {
+    clickMenu() {
+      this.collapsed = !this.collapsed
+      this.$emit('checkCollapsed', this.collapsed);
+    }
+  },
+}
 </script>
 <style>
   .logo {

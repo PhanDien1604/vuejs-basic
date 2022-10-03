@@ -40,25 +40,15 @@
   </a-layout-sider>
 </template>
 <script>
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined
-} from '@ant-design/icons-vue';
-import { defineComponent, ref } from 'vue';
-export default defineComponent({
+import {UserOutlined, VideoCameraOutlined, UploadOutlined} from '@ant-design/icons-vue';
+
+export default {
   components: {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
   },
-  setup() {
-    return {
-      selectedKeys: ref(['1']),
-      collapsed: ref(false),
-    };
-  },
-})
+}
 </script>
 <style>
   .trigger {

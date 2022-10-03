@@ -48,8 +48,8 @@
 </template>
   <script>
   import { UserOutlined, VideoCameraOutlined, UploadOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue';
-  import { defineComponent, ref } from 'vue';
-  export default defineComponent({
+  import { ref } from 'vue';
+  export default {
     components: {
       UserOutlined,
       VideoCameraOutlined,
@@ -65,7 +65,7 @@
       };
     },
   
-  });
+  };
   </script>
   <style>
   #components-layout-demo-custom-trigger .trigger {
