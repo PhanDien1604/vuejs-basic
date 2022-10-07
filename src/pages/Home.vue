@@ -1,7 +1,5 @@
 <template lang="">
-  <a-layout-content
-    :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-  >
+  <a-layout-content>
     Content
   </a-layout-content>
 </template>
@@ -14,4 +12,11 @@ export default {
 }
 </script>
 <style>
+  .ant-layout-content {
+    margin: calc(24px + 64px) 16px;
+    padding: 24px;
+    background-color: #fff;
+    min-height: 280px;
+    height: 1000px;
+  }
 </style>

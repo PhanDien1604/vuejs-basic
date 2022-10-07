@@ -1,8 +1,16 @@
 <template>
   <a-layout>
-    <Slider :collapsed="collapsed"/>
-    <a-layout>
-      <Header @checkCollapsed="changeCollapsed"/>
+    <Slider 
+      :collapsed="collapsed" 
+      :themed="themed" 
+    />
+    <a-layout :style="{marginLeft: collapsed ? '80px' : '200px', transition: 'all 0.2s'}">
+      <Header 
+        :collapsed="collapsed" 
+        :themed="themed"
+        @checkCollapsed="changeCollapsed" 
+        @checkThemed="changeTheme"
+      />
       <router-view />
       <Footer />
     </a-layout>
@@ -21,15 +29,24 @@ export default {
     Footer,
     Slider
   },
-
   data() {
     return {
-      collapsed: false
+      collapsed: false,
+      themed: 'dark',
+      checkTheme: false
     }
   },
+
   methods: {
-    changeCollapsed(collap) {
-      this.collapsed = collap
+    changeCollapsed() {
+      this.collapsed = !this.collapsed
+    },
+    changeTheme() {
+      if(this.themed === 'dark') {
+        this.themed = 'light'
+      }else {
+        this.themed = 'dark'
+      }
     }
   },
 }
