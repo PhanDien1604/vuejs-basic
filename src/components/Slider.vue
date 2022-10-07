@@ -19,7 +19,7 @@
         </span>
       </div>
 
-      <div class="box-search" :style="{display: collapsed ? 'none' : 'flex', padding: '16px 0', borderTop: '2px solid gray'}">
+      <div class="box-search" :style="{display: collapsed ? 'none' : 'flex', padding: '16px 0', borderTop: '2px solid #f8f8f8'}">
         <a-input 
           v-model:value="value" 
           placeholder="Search" 
@@ -34,7 +34,7 @@
         </a-button>
       </div>
 
-    <div :style="{display: 'flex', flexWrap: 'wrap', alignContent: 'space-between', height: 'calc(100% - 148px)'}">
+    <div :style="{display: 'flex', flexWrap: 'wrap', alignContent: 'space-between', height: collapsed ? 'calc(100% - 148px + 74px)' : 'calc(100% - 148px)'}">
       <a-menu
         v-model:selectedKeys="selectedKeys"
         :theme="themed"
@@ -183,5 +183,11 @@ export default {
 }
 .ant-layout-sider-children .ant-menu.ant-menu-inline-collapsed {
   width: 100% !important;
+}
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+  border: none !important;
+}
+.ant-menu {
+  background: #ffffff00 !important;
 }
 </style>
