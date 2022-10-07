@@ -144,8 +144,19 @@ export default {
 }
 </script>
 <style>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.slider {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .boxLogo {
-  margin: 16px 12px;
+  margin: 16px 0px;
+  margin-left: 12px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
