@@ -1,39 +1,48 @@
 <template>
-  <a-layout>
-    <Slider 
-      :collapsed="collapsed" 
-      :themed="themed" 
-    />
-    <a-layout :style="{marginLeft: collapsed ? '80px' : '200px', transition: 'all 0.2s'}">
-      <Header 
+  <fullscreen v-model:fullscreen="fullscreen" :teleport="teleport" :page-only="pageOnly">
+    <a-layout class="fullscreen-wrapper">
+      <Slider 
         :collapsed="collapsed" 
-        :themed="themed"
-        @checkCollapsed="changeCollapsed" 
-        @checkThemed="changeTheme"
+        :themed="themed" 
       />
-      <router-view />
-      <Footer />
+      <a-layout :style="{marginLeft: collapsed ? '80px' : '200px', transition: 'all 0.2s'}">
+        <Header 
+          :collapsed="collapsed" 
+          :themed="themed"
+          :fullscreen="fullscreen"
+          @checkCollapsed="changeCollapsed" 
+          @checkThemed="changeTheme"
+          @clickFullScreen="toggle"
+        />
+        <router-view />
+        <Footer />
+      </a-layout>
     </a-layout>
-  </a-layout>
+  </fullscreen>
 </template>
   
 <script>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
-import Slider from '@/components/Slider.vue';
-  
-export default {
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import Slider from '@/components/Slider.vue'
+import {
+    ref,
+    defineComponent,
+    toRefs,
+    reactive
+  } from 'vue'
+export default defineComponent({
   name: 'App',
   components: {
     Header,
     Footer,
-    Slider
+    Slider,
   },
   data() {
     return {
       collapsed: false,
       themed: 'dark',
-      checkTheme: false
+      checkTheme: false,
     }
   },
 
@@ -47,9 +56,35 @@ export default {
       }else {
         this.themed = 'dark'
       }
+    },
+    toggleApi () {this.$fullscreen.toggle(document.querySelector('.fullscreen-wrapper'), {
+        teleport: this.teleport,
+        callback: (isFullscreen) => {
+          this.fullscreen = isFullscreen
+        }
+      })
     }
+      
   },
-}
+
+  setup () {
+    const root = ref()
+    const state = reactive({
+      fullscreen: false,
+      teleport: false,
+      pageOnly: false
+    })
+    function toggle () {
+      state.fullscreen = !state.fullscreen
+    }
+
+    return {
+      root,
+      ...toRefs(state),
+      toggle
+    }
+  }
+})
 </script>
 
 <style>

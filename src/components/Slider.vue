@@ -41,18 +41,24 @@
         mode="inline"
       >
         <a-menu-item key="1">
-          <DashboardOutlined />
-          <span>Dashboard</span>
+          <router-link to="/">
+            <DashboardOutlined />
+            <span>Dashboard</span>
+          </router-link>
         </a-menu-item>
 
         <a-menu-item key="users">
-          <TeamOutlined />
-          <span>Users</span>
+          <router-link to="/users">
+            <TeamOutlined />
+            <span>Users</span>
+          </router-link>
         </a-menu-item>
 
         <a-menu-item key="products">
-          <SkinOutlined />
-          <span>Products</span>
+          <router-link to="/products">
+            <SkinOutlined />
+            <span>Products</span>
+          </router-link>
         </a-menu-item>
 
         <a-sub-menu key="orders">
@@ -71,18 +77,24 @@
         </a-sub-menu>
 
         <a-menu-item key="warehouse">
-          <HomeOutlined />
-          <span>Warehouse</span>
+          <router-link to="/warehouse">
+            <HomeOutlined />
+            <span>Warehouse</span>
+          </router-link>
         </a-menu-item>
 
         <a-menu-item key="statistical">
-          <BarChartOutlined />
-          <span>Statistical</span>
+          <router-link to="/statistical">
+            <BarChartOutlined />
+            <span>Statistical</span>
+          </router-link>
         </a-menu-item>
         
         <a-menu-item key="category">
-          <UnorderedListOutlined />
-          <span>Category</span>
+          <router-link to="/category">
+            <UnorderedListOutlined />
+            <span>Category</span>
+          </router-link>
         </a-menu-item>
       </a-menu>
 
@@ -92,18 +104,24 @@
         mode="inline"
       >
         <a-menu-item key="contact">
-          <ContactsOutlined />
-          <span>Contact</span>
+          <router-link to="/contact">
+            <ContactsOutlined />
+            <span>Contact</span>
+          </router-link>
         </a-menu-item>
 
         <a-menu-item key="account">
-          <UserOutlined />
-          <span>Account</span>
+          <router-link to="/account">
+            <UserOutlined />
+            <span>Account</span>
+          </router-link>
         </a-menu-item>
 
         <a-menu-item key="setting">
-          <SettingOutlined />
-          <span>Setting</span>
+          <router-link to="/setting">
+            <SettingOutlined />
+            <span>Setting</span>
+          </router-link>
         </a-menu-item>
       </a-menu>
     </div>
@@ -197,8 +215,5 @@ export default {
 }
 .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
   border: none !important;
-}
-.ant-menu {
-  background: #ffffff00 !important;
 }
 </style>

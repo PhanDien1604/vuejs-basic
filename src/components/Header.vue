@@ -28,8 +28,14 @@
             <ExportOutlined class="trigger" :style="{margin: '0 8px'}"/>
           </a-col>
           <a-col>
-            <FullscreenOutlined class="trigger" :style="{margin: '0 8px'}"/>
-            <FullscreenExitOutlined class="trigger" :style="{margin: '0 8px', display: 'none'}"/>
+            <FullscreenOutlined class="trigger" 
+              :style="{margin: '0 8px', display: !fullscreen ? '' : 'none'}" 
+              @click="changeScreen" 
+            />
+            <FullscreenExitOutlined class="trigger" 
+              :style="{margin: '0 8px', display: fullscreen ? '' : 'none'}" 
+              @click="changeScreen" 
+            />
           </a-col>
           <a-col>
             <a-switch :checked="themed ==='dark'" @change="changeTheme" :style="{marginLeft: '16px'}"/>
@@ -59,14 +65,18 @@ export default {
   props: {
       collapsed: Boolean,
       themed: String,
+      fullscreen: Boolean
   },
 
   methods: {
     clickMenu() {
-      this.$emit('checkCollapsed');
+      this.$emit('checkCollapsed')
     },
     changeTheme() {
       this.$emit('checkThemed')
+    },
+    changeScreen() {
+      this.$emit('clickFullScreen')
     }
   },
 }

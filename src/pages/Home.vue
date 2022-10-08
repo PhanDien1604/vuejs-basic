@@ -16,7 +16,6 @@ export default {
     margin: calc(24px + 64px) 16px;
     padding: 24px;
     background-color: #fff;
-    min-height: 280px;
-    height: 1000px;
+    height: 2000px;
   }
 </style>
