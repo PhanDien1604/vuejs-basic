@@ -4,6 +4,7 @@
       <Slider 
         :collapsed="collapsed" 
         :themed="themed" 
+        :selectedKeys="selectedKeys"
       />
       <a-layout :style="{marginLeft: collapsed ? '80px' : '200px', transition: 'all 0.2s'}">
         <Header 
@@ -14,7 +15,7 @@
           @checkThemed="changeTheme"
           @clickFullScreen="toggle"
         />
-        <router-view />
+        <router-view @setSelectedKeys="setSelectedKeys" />
         <Footer />
       </a-layout>
     </a-layout>
@@ -43,6 +44,7 @@ export default defineComponent({
       collapsed: false,
       themed: 'dark',
       checkTheme: false,
+      selectedKeys: ['dashboard'],
     }
   },
 
@@ -56,6 +58,9 @@ export default defineComponent({
       }else {
         this.themed = 'dark'
       }
+    },
+    setSelectedKeys(key) {
+        this.selectedKeys = key
     },
     toggleApi () {this.$fullscreen.toggle(document.querySelector('.fullscreen-wrapper'), {
         teleport: this.teleport,

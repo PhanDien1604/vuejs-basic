@@ -40,7 +40,7 @@
         :theme="themed"
         mode="inline"
       >
-        <a-menu-item key="1">
+        <a-menu-item key="dashboard">
           <router-link to="/">
             <DashboardOutlined />
             <span>Dashboard</span>
@@ -113,7 +113,7 @@
         <a-menu-item key="account">
           <router-link to="/account">
             <UserOutlined />
-            <span>Account</span>
+            <span>{{ selectedKeys }}</span>
           </router-link>
         </a-menu-item>
 
@@ -132,7 +132,6 @@ import {UserOutlined, VideoCameraOutlined, UploadOutlined, SearchOutlined, Setti
   HomeOutlined, ContactsOutlined, BarChartOutlined, IdcardOutlined, SkinOutlined,
   UnorderedListOutlined, DashboardOutlined, TeamOutlined, BulbOutlined } from '@ant-design/icons-vue';
 import { ref } from 'vue';
-
 export default {
   components: {
     UserOutlined,
@@ -153,11 +152,7 @@ export default {
   props: {
       collapsed: Boolean,
       themed: String,
-  },
-  setup() {
-    return {
-      selectedKeys: ref(['1']),
-    };
+      selectedKeys: Array
   },
 }
 </script>

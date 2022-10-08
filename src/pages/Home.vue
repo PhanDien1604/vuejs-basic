@@ -7,6 +7,7 @@
 import Admin from "@/layouts/Admin"
 export default {
   created() {
+    this.$emit('setSelectedKeys', ['dashboard'])
     this.$emit('update:layout', Admin)
   },
 }

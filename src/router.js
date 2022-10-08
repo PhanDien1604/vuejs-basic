@@ -31,6 +31,10 @@ const routes = [
         component: UsersIndex
     },
     {
+        path: '/products',
+        component: ProductIndex
+    },
+    {
         path: '/orders',
         component: OrderIndex
     },
