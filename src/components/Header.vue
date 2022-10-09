@@ -1,7 +1,7 @@
 <template lang="">
   <a-layout-header
-    :style="{backgroundColor: '#fff', padding: '0 24px', position: 'fixed', 
-    width: !collapsed ? 'calc(100% - 200px)' : 'calc(100% - 80px)', transition: 'all 0.2s', boxShadow: '0 5px 10px -10px gray'}"
+    class="header"
+    :style="{width: !collapsed ? 'calc(100% - 200px)' : 'calc(100% - 80px)'}"
   >
     <a-row type="flex" justify="space-between">
       <a-col>
@@ -82,5 +82,12 @@ export default {
 }
 </script>
 <style>
-  
+.header {
+  background: #fff !important;
+  padding: 0 24px !important;
+  position: fixed;
+  transition: all 0.2s;
+  box-shadow: 0 5px 10px -10px gray;
+  z-index: 1000;
+}
 </style>

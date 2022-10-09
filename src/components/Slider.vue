@@ -41,21 +41,21 @@
         mode="inline"
       >
         <a-menu-item key="dashboard">
-          <router-link to="/">
+          <router-link :to="{name: 'home'}">
             <DashboardOutlined />
             <span>Dashboard</span>
           </router-link>
         </a-menu-item>
 
         <a-menu-item key="users">
-          <router-link to="/users">
+          <router-link :to="{name: 'users'}">
             <TeamOutlined />
             <span>Users</span>
           </router-link>
         </a-menu-item>
 
         <a-menu-item key="products">
-          <router-link to="/products">
+          <router-link :to="{name: 'products'}">
             <SkinOutlined />
             <span>Products</span>
           </router-link>
@@ -77,21 +77,21 @@
         </a-sub-menu>
 
         <a-menu-item key="warehouse">
-          <router-link to="/warehouse">
+          <router-link :to="{name: 'warehouse'}">
             <HomeOutlined />
             <span>Warehouse</span>
           </router-link>
         </a-menu-item>
 
         <a-menu-item key="statistical">
-          <router-link to="/statistical">
+          <router-link :to="{name: 'statistical'}">
             <BarChartOutlined />
             <span>Statistical</span>
           </router-link>
         </a-menu-item>
         
         <a-menu-item key="category">
-          <router-link to="/category">
+          <router-link :to="{name: 'category'}">
             <UnorderedListOutlined />
             <span>Category</span>
           </router-link>
@@ -104,21 +104,21 @@
         mode="inline"
       >
         <a-menu-item key="contact">
-          <router-link to="/contact">
+          <router-link :to="{name: 'contact'}">
             <ContactsOutlined />
             <span>Contact</span>
           </router-link>
         </a-menu-item>
 
         <a-menu-item key="account">
-          <router-link to="/account">
+          <router-link :to="{name: 'account'}">
             <UserOutlined />
-            <span>{{ selectedKeys }}</span>
+            <span>Account</span>
           </router-link>
         </a-menu-item>
 
         <a-menu-item key="setting">
-          <router-link to="/setting">
+          <router-link :to="{name: 'setting'}">
             <SettingOutlined />
             <span>Setting</span>
           </router-link>
@@ -130,8 +130,9 @@
 <script>
 import {UserOutlined, VideoCameraOutlined, UploadOutlined, SearchOutlined, SettingOutlined, 
   HomeOutlined, ContactsOutlined, BarChartOutlined, IdcardOutlined, SkinOutlined,
-  UnorderedListOutlined, DashboardOutlined, TeamOutlined, BulbOutlined } from '@ant-design/icons-vue';
-import { ref } from 'vue';
+  UnorderedListOutlined, DashboardOutlined, TeamOutlined, BulbOutlined } 
+from '@ant-design/icons-vue';
+
 export default {
   components: {
     UserOutlined,

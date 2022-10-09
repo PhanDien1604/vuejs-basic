@@ -1,14 +1,14 @@
 <template lang="">
-  <a-layout-content>
-    Products
-  </a-layout-content>
+    <a-layout-content>
+        Create
+    </a-layout-content>
 </template>
 <script>
 import Admin from "@/layouts/Admin"
 export default {
-  created() {
-    this.$emit('setSelectedKeys', ['products'])
+created() {
+    this.$emit('setSelectedKeys', ['users'])
     this.$emit('update:layout', Admin)
-  },
+},
 }
 </script>
